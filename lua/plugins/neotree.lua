@@ -35,11 +35,11 @@ local function open_netrw_like(dir)
         path = find_git_root(path)
     end
 
-  require("neo-tree.command").execute({
-    position  = "current",
-    dir       = path or vim.fn.getcwd(),
-    reveal = true,
-  })
+    require("neo-tree.command").execute({
+        position  = "current",
+        dir       = path or vim.fn.getcwd(),
+        reveal = true,
+    })
 end
 -------------------
 -- 4. Toggling the right-side panel
@@ -54,7 +54,7 @@ local function toggle_side_condensed(dir)
     -- 'toggle = true' tells Neo-tree to open if it's closed,
     -- or close it if it's open at 'position = "right"'.
     require("neo-tree.command").execute({
-        position  = "right",
+        position  = "left",
         toggle    = true,
         dir       = path,
         reveal    = true,
@@ -93,6 +93,8 @@ function M.setup()
                 enabled = true, 
             },            
             window = {
+                width = 20, -- applies to left and right positions
+                auto_expand_width = false,
                 mappings = {
                     ["<space>"] = "toggle_node",
                     ["<cr>"]     = "cd_or_open",
