@@ -11,10 +11,13 @@ return {
             else
                 builtin.find_files()
             end
-        end)
-        vim.keymap.set('n', '<leader>fg', function()
-            builtin.grep_string({search = vim.fn.input("Grep > ")})
-        end)
+        end,{desc="fuzzy find files"})
+        vim.api.nvim_set_keymap(
+        'n', -- mode: normal
+        '<leader>fg', -- key sequence
+        '<cmd>Telescope live_grep<CR>', -- command to run
+        { noremap = true, silent = true, desc="search all files"} -- options: non-recursive, silent
+        )
     end
 }
 

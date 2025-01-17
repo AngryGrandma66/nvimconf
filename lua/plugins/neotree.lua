@@ -24,7 +24,7 @@ end
 local function is_git_repo(path)
     return (find_git_root(path) ~= nil)
 end
-
+    
 --------------------------------------------------------------------------------
 -- 2. "Netrw-like" tree with full renderers (icons, git, etc.)
 --------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ function M.setup()
             },            
             window = {
                 width = 20, -- applies to left and right positions
-                auto_expand_width = false,
+                auto_expand_width = true,
                 mappings = {
                     ["<space>"] = "toggle_node",
                     ["<cr>"]     = "cd_or_open",
@@ -112,7 +112,7 @@ function M.setup()
                     ["y"]        = "copy_to_clipboard",
                     ["x"]        = "cut_to_clipboard",
                     ["p"]        = "paste_from_clipboard",
-                    ["c"]        = "copy",  
+                    ["c"]        = "copy",
                     ["m"]        = "move",
                     ["H"]        = "toggle_hidden",
                     ["R"]        = "refresh",
