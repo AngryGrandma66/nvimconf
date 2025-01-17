@@ -47,4 +47,4 @@ vim.o.autowriteall = true
 --vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7')
 --vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7')
 --vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
---vim.o.showtabline = 2
+vim.o.showtabline = 2
