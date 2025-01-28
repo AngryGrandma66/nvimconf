@@ -24,7 +24,7 @@ end
 local function is_git_repo(path)
     return (find_git_root(path) ~= nil)
 end
-    
+
 --------------------------------------------------------------------------------
 -- 2. "Netrw-like" tree with full renderers (icons, git, etc.)
 --------------------------------------------------------------------------------
